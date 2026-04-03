@@ -86,7 +86,18 @@
     .stat-label { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: .25rem; }
     .stat-value { font-family: 'Poppins', serif; font-size: 1.8rem; color: var(--accent); }
 
-    .donate-img { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: .85rem 1.25rem; flex: 1; min-width: 130px; display: flex; flex-direction: column; align-items: center;}
+    .donate-img { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: .85rem 1.25rem; flex: 1; min-width: 130px;}
+    .donate-flex {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 50px;
+    }
+    .donate-flex img {
+      width: 250px;
+      margin: 0px 0px 10px 0px;
+    }
+    
 
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: .875rem; }
@@ -159,6 +170,8 @@
       .edit-row, .edit-row td { display: block; }
       .admin-panel { flex-direction: row; align-items: center; gap: .5rem; padding: .75rem 1rem; }
       .admin-panel input[type="password"] { max-width: 40%; width: 100%; }
+      .donate-flex { display: flex; flex-direction: column; align-items: center; gap: 20px;}
+      .donate-flex img { width: 250px; margin: 0px; }
     }
   </style>
 </head>
@@ -183,9 +196,16 @@
     </div>
     <div class="stats">
       <div class="donate-img">
-        <div class="card-title">Donate to Iran with UPI</div>
-        <img src="static/upi.jpg" style="width: 250px;">
+        <div class="card-title">Donate to Iran</div>
+        <div class="donate-flex">
+        <img src="static/upi.jpg">
+        <div><div class="card-title">Bank account</div>
+        <div>Bank Account Name: Embassy of Iran</div>
+        <div>Bank Account Number: 45027539287</div>
+        <div>Bank IFSC: SBIN0000691</div></div></div>
+        <br><p>Source: Embassy of Iran in India <a href='https://x.com/Iran_in_India/status/2036063571478810735?s=20'>post on Twitter, Mar-23 2026</a></p>
       </div>
+    
     </div>
 
     <div class="card admin-only" id="import-card">
@@ -238,7 +258,7 @@
     <button class="btn btn-ghost btn-sm" id="lock-btn" onclick="lockAdmin()" style="display:none;">🔒 Lock</button>
     <span class="admin-status locked" id="admin-status">Enter password to edit</span>
   </div>
-
+  <footer style="text-align: center; margin-top: -20px; margin-bottom: 10px;">Made with ❤️ for 🇮🇷<br>by <a href='https://www.linkedin.com/in/noorulali'>Noorul Ali</a></footer>
   <div id="toast-container"></div>
 
   <script>
